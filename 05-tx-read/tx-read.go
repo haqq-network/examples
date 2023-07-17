@@ -5,6 +5,8 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"github.com/evmos/ethermint/encoding"
+	"github.com/haqq-network/haqq/app"
 
 	"github.com/cosmos/cosmos-sdk/client"
 )
@@ -30,13 +32,24 @@ func main() {
 		panic(err)
 	}
 
+	// Decode the transaction
+	encodingConfig := encoding.MakeConfig(app.ModuleBasics)
+	decodedTx, err := encodingConfig.TxConfig.TxDecoder()(resTx.Tx)
+
 	// Get unsigned TX in JSON
-	encoded, err := json.Marshal(resTx)
+	encoded, err := encodingConfig.TxConfig.TxJSONEncoder()(decodedTx)
+	if err != nil {
+		panic(err)
+	}
+
+	ecodedTxResponse, err := json.Marshal(resTx)
 	if err != nil {
 		panic(err)
 	}
 
 	// Print the serialized transaction
+	fmt.Println("Response:")
+	fmt.Println(string(ecodedTxResponse))
 	fmt.Println("TX JSON:")
 	fmt.Println(string(encoded))
 }
