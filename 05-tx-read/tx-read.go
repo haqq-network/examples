@@ -5,10 +5,11 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/evmos/ethermint/encoding"
-	"github.com/haqq-network/haqq/app"
 
 	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/evmos/ethermint/encoding"
+
+	"github.com/haqq-network/haqq/app"
 )
 
 func main() {
