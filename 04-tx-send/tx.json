@@ -1,0 +1,52 @@
+{
+  "body": {
+    "messages": [
+      {
+        "@type": "/cosmos.bank.v1beta1.MsgSend",
+        "from_address": "haqq15gl76py2lqqrlawzs0afkmh9k7kxc6wmvcqqlm",
+        "to_address": "haqq1rflt3kdkhefxzhkt94cwknmdfvpps39cpr55m0",
+        "amount": [
+          {
+            "denom": "aISLM",
+            "amount": "1000000000000000000"
+          }
+        ]
+      }
+    ],
+    "memo": "Sample transaction",
+    "timeout_height": "0",
+    "extension_options": [],
+    "non_critical_extension_options": []
+  },
+  "auth_info": {
+    "signer_infos": [
+      {
+        "public_key": {
+          "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
+          "key": "A8rR5aqJrXDWOFnH1sfL7yHXurWI4dfTEO/jefZ5jGDG"
+        },
+        "mode_info": {
+          "single": {
+            "mode": "SIGN_MODE_DIRECT"
+          }
+        },
+        "sequence": "205"
+      }
+    ],
+    "fee": {
+      "amount": [
+        {
+          "denom": "aISLM",
+          "amount": "20"
+        }
+      ],
+      "gas_limit": "500000",
+      "payer": "",
+      "granter": ""
+    },
+    "tip": null
+  },
+  "signatures": [
+    "FeDciv7a20aXqWRUktUvmp47ZYn8tptg7Iazctqc4WERdOd8LGtub2g5IUrrto8GP7SptyqfeWLefL78+oqHKwE="
+  ]
+}
